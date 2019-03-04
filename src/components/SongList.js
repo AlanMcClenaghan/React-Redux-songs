@@ -35,7 +35,6 @@ class SongList extends Component {
 
   render() {
     // this.props === { songs: state.songs }
-    console.log(this.props)
     return (
       <div className="ui divided list">
         <h1>Play List</h1>
@@ -51,17 +50,13 @@ class SongList extends Component {
    that is going to show up as props inside the component
 */
 const mapStateToProps = state => {
-  console.log(state);
-  console.log(state.songs);
-  console.log(state.selectedSong)
-
   return { songs: state.songs };
 }
 
 /* Always call the connect function and then
    pass in the component as the second function call */
 export default connect(mapStateToProps, {
-  selectSong: selectSong
+  selectSong
 })(SongList);
 
 // Connect() is returning a function
